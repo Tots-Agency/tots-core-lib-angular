@@ -6,6 +6,7 @@
  * Entities
  */
 export * from './lib/entities/tots-core-config';
+export * from './lib/entities/tots-query';
 
 /**
  * Modules
