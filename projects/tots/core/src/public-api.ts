@@ -10,6 +10,11 @@ export * from './lib/entities/tots-query';
 export * from './lib/entities/tots-list-response';
 
 /**
+ * Operators
+ */
+export * from './lib/operators/nil';
+
+/**
  * Services
  */
 export * from './lib/services/tots-base-http.service';
