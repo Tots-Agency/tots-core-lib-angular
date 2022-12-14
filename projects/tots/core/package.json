@@ -1,9 +1,9 @@
 {
   "name": "@tots/core",
-  "version": "14.2.2",
+  "version": "15.0.3",
   "peerDependencies": {
-    "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0"
+    "@angular/common": "^15.0.3",
+    "@angular/core": "^15.0.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"
