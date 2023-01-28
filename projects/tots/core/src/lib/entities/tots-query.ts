@@ -15,6 +15,10 @@ export class TotsQuery {
      * 
      */
     groups: Array<any> = [];
+    /**
+     * 
+     */
+    sums: Array<any> = [];
 
     /**
      * 
@@ -153,10 +157,17 @@ export class TotsQuery {
         this.groups.push(key);
     }
     /**
+     * 
+     * @param key 
+     */
+    addSum(key: string) {
+        this.sums.push(key);
+    }
+    /**
      * Devuelve queryParams para el request HTTP
      * @returns 
      */
     toString() {
-        return 'page=' + this.page + '&per_page=' + this.per_page + '&groups=' + this.groups.join(',') + '&filters=' + this.convertWheresToBase64();
+        return 'page=' + this.page + '&per_page=' + this.per_page + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filters=' + this.convertWheresToBase64();
     }
 }
