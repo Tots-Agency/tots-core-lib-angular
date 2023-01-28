@@ -11,6 +11,10 @@ export class TotsQuery {
      * 
      */
     wheres: Array<any> = [];
+    /**
+     * 
+     */
+    groups: Array<any> = [];
 
     /**
      * 
@@ -142,10 +146,17 @@ export class TotsQuery {
         return btoa(string);
     }
     /**
+     * 
+     * @param key 
+     */
+    addGroupBy(key: string) {
+        this.groups.push(key);
+    }
+    /**
      * Devuelve queryParams para el request HTTP
      * @returns 
      */
     toString() {
-        return 'page=' + this.page + '&per_page=' + this.per_page + '&filters=' + this.convertWheresToBase64();
+        return 'page=' + this.page + '&per_page=' + this.per_page + '&groups=' + this.groups.join(',') + '&filters=' + this.convertWheresToBase64();
     }
 }
