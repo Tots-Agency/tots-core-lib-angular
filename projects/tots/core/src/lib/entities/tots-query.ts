@@ -132,6 +132,18 @@ export class TotsQuery {
     }
     /**
      * 
+     * @param key 
+     * @param value
+     */
+    addWhereLikes(keys: Array<string>, value: string) {
+        this.wheres.push({
+            type: 'likes',
+            keys: keys,
+            value: value
+        })
+    }
+    /**
+     * 
      */
     resetWheres() {
         this.wheres = [];
