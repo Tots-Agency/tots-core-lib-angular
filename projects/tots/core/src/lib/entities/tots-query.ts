@@ -25,7 +25,7 @@ export class TotsQuery {
      * @param key 
      * @param value
      */
-     addWhereEqual(key: string, value: string) {
+     addWhereEqual(key: string, value: any) {
         this.wheres.push({
             type: 'equal',
             key: key,
@@ -63,7 +63,7 @@ export class TotsQuery {
      * @param key 
      * @param value 
      */
-    addWhereGreaterThan(key: string, value: string) {
+    addWhereGreaterThan(key: string, value: any) {
         this.wheres.push({
             type: 'greater-than',
             key: key,
@@ -87,7 +87,7 @@ export class TotsQuery {
      * @param key 
      * @param value 
      */
-    addWhereLessThan(key: string, value: string) {
+    addWhereLessThan(key: string, value: any) {
         this.wheres.push({
             type: 'less-than',
             key: key,
@@ -99,7 +99,7 @@ export class TotsQuery {
      * @param key 
      * @param value 
      */
-     addWhereYear(key: string, value: string) {
+     addWhereYear(key: string, value: any) {
         this.wheres.push({
             type: 'year',
             key: key,
@@ -111,7 +111,7 @@ export class TotsQuery {
      * @param key 
      * @param value 
      */
-     addWhereMonth(key: string, value: string) {
+     addWhereMonth(key: string, value: any) {
         this.wheres.push({
             type: 'month',
             key: key,
@@ -123,7 +123,7 @@ export class TotsQuery {
      * @param key 
      * @param value 2020-01-01
      */
-     addWhereWeek(key: string, value: string) {
+     addWhereWeek(key: string, value: any) {
         this.wheres.push({
             type: 'week',
             key: key,
