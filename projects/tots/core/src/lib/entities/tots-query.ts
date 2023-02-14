@@ -19,6 +19,10 @@ export class TotsQuery {
      * 
      */
     sums: Array<any> = [];
+    /**
+     * 
+     */
+    withs: Array<any> = [];
 
     /**
      * 
@@ -176,10 +180,17 @@ export class TotsQuery {
         this.sums.push(key);
     }
     /**
+     * 
+     * @param key 
+     */
+    addWith(key: string) {
+        this.withs.push(key);
+    }
+    /**
      * Devuelve queryParams para el request HTTP
      * @returns 
      */
     toString() {
-        return 'page=' + this.page + '&per_page=' + this.per_page + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filters=' + this.convertWheresToBase64();
+        return 'page=' + this.page + '&per_page=' + this.per_page + '&withs=' + this.withs.join(',') + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filters=' + this.convertWheresToBase64();
     }
 }
