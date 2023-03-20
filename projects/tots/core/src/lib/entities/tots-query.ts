@@ -193,4 +193,11 @@ export class TotsQuery {
     toString() {
         return 'page=' + this.page + '&per_page=' + this.per_page + '&withs=' + this.withs.join(',') + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filters=' + this.convertWheresToBase64() + '&perPage=' + this.per_page;
     }
+    /**
+     * Devuelve queryParams para el request HTTP para poder copiarse
+     * @returns 
+     */
+    toStringTest() {
+        return 'page=' + this.page + '&per_page=' + this.per_page + '&withs=' + this.withs.join(',') + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filtersString=' + JSON.stringify({ wheres: this.wheres }) + '&perPage=' + this.per_page;
+    }
 }
