@@ -191,6 +191,6 @@ export class TotsQuery {
      * @returns 
      */
     toString() {
-        return 'page=' + this.page + '&per_page=' + this.per_page + '&withs=' + this.withs.join(',') + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filters=' + this.convertWheresToBase64();
+        return 'page=' + this.page + '&per_page=' + this.per_page + '&withs=' + this.withs.join(',') + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filters=' + this.convertWheresToBase64() + '&perPage=' + this.per_page;
     }
 }
