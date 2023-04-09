@@ -148,6 +148,16 @@ export class TotsQuery {
     }
     /**
      * 
+     * @param key 
+     */
+    addWhereNull(key: string) {
+        this.wheres.push({
+            type: 'null',
+            key: key
+        })
+    }
+    /**
+     * 
      */
     resetWheres() {
         this.wheres = [];
