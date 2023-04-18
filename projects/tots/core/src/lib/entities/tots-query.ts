@@ -23,6 +23,10 @@ export class TotsQuery {
      * 
      */
     withs: Array<any> = [];
+    /**
+     * 
+     */
+    orders: Array<any> = [];
 
     /**
      * 
@@ -172,7 +176,7 @@ export class TotsQuery {
      * 
      */
     convertWheresToBase64() {
-        let string = JSON.stringify({ wheres: this.wheres });
+        let string = JSON.stringify({ wheres: this.wheres, orders: this.orders });
         return btoa(string);
     }
     /**
@@ -197,6 +201,26 @@ export class TotsQuery {
         this.withs.push(key);
     }
     /**
+     * 
+     * @param key 
+     */
+    addOrderAsc(key: string) {
+        this.orders.push({
+            type: 'asc',
+            field: key
+        })
+    }
+    /**
+     * 
+     * @param key 
+     */
+    addOrderDesc(key: string) {
+        this.orders.push({
+            type: 'desc',
+            field: key
+        })
+    }
+    /**
      * Devuelve queryParams para el request HTTP
      * @returns 
      */
@@ -208,6 +232,6 @@ export class TotsQuery {
      * @returns 
      */
     toStringTest() {
-        return 'page=' + this.page + '&per_page=' + this.per_page + '&withs=' + this.withs.join(',') + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filtersString=' + JSON.stringify({ wheres: this.wheres }) + '&perPage=' + this.per_page;
+        return 'page=' + this.page + '&per_page=' + this.per_page + '&withs=' + this.withs.join(',') + '&groups=' + this.groups.join(',') + '&sums=' + this.sums.join(',') + '&filtersString=' + JSON.stringify({ wheres: this.wheres, orders: this.orders }) + '&perPage=' + this.per_page;
     }
 }
