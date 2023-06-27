@@ -163,6 +163,19 @@ export class TotsQuery {
     /**
      * 
      */
+    removeAllWhereLikes() {
+        this.removeWheresByType('likes');
+    }
+    /**
+     * 
+     * @param type 
+     */
+    removeWheresByType(type: string) {
+        this.wheres = this.wheres.filter(item => item.type != type);
+    }
+    /**
+     * 
+     */
     resetWheres() {
         this.wheres = [];
     }
