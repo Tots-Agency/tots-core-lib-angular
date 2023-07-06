@@ -57,6 +57,20 @@ export class TotsQuery {
     /**
      * 
      * @param key 
+     * @param from 
+     * @param to 
+     */
+     addWhereBetweenDate(key: string, from: any, to: any) {
+        this.wheres.push({
+            type: 'between_date',
+            key: key,
+            from: from,
+            to: to,
+        })
+    }
+    /**
+     * 
+     * @param key 
      * @param value 
      */
      addWhereDate(key: string, value: string) {
