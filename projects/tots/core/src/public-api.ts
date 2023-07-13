@@ -25,6 +25,7 @@ export * from './lib/services/tots-cache-in-memory.service';
  */
  export * from './lib/helpers/bytes.helper';
  export * from './lib/helpers/string.helper';
+ export * from './lib/helpers/files.helper';
 
 /**
  * Modules
