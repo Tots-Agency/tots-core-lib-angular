@@ -182,6 +182,30 @@ export class TotsQuery {
     }
     /**
      * 
+     */
+    removeAllWhereIn() {
+        this.removeWheresByType('in');
+    }
+    /**
+     * 
+     */
+    removeAllWhereBetween() {
+        this.removeWheresByType('between');
+    }
+    /**
+     * 
+     */
+    removeAllWhereBetweenDate() {
+        this.removeWheresByType('between_date');
+    }
+    /**
+     * 
+     */
+    removeAllWhereEqual() {
+        this.removeWheresByType('equal');
+    }
+    /**
+     * 
      * @param type 
      */
     removeWheresByType(type: string) {
@@ -198,6 +222,18 @@ export class TotsQuery {
      */
     cleanWheres() {
         this.resetWheres();
+    }
+    /**
+     * 
+     */
+    resetOrders() {
+        this.orders = [];
+    }
+    /**
+     * 
+     */
+    cleanOrders() {
+        this.resetOrders();
     }
     /**
      * 
