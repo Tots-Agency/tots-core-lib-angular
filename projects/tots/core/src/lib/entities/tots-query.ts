@@ -47,6 +47,18 @@ export class TotsQuery {
     /**
      *
      * @param key
+     * @param value
+     */
+    addWhereNotEqual(key: string, value: any) {
+      this.wheres.push({
+          type: 'notequal',
+          key: key,
+          value: value
+      })
+  }
+    /**
+     *
+     * @param key
      * @param from
      * @param to
      */
@@ -208,6 +220,12 @@ export class TotsQuery {
     removeAllWhereEqual() {
         this.removeWheresByType('equal');
     }
+    /**
+     *
+     */
+    removeAllWhereNotEqual() {
+      this.removeWheresByType('notequal');
+  }
     /**
      *
      * @param type
