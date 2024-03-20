@@ -123,6 +123,18 @@ export class TotsQuery {
     /**
      *
      * @param key
+     * @param values
+     */
+    addWhereNotIn(key: string, values: any) {
+        this.wheres.push({
+            type: 'not-in',
+            key: key,
+            value: values
+        })
+    }
+    /**
+     *
+     * @param key
      * @param value
      */
     addWhereLessThan(key: string, value: any) {
@@ -201,6 +213,12 @@ export class TotsQuery {
      */
     removeAllWhereIn() {
         this.removeWheresByType('in');
+    }
+    /**
+     *
+     */
+    removeAllWhereNotIn() {
+        this.removeWheresByType('not-in');
     }
     /**
      *
