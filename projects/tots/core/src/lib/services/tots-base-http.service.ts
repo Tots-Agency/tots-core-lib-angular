@@ -10,7 +10,7 @@ import { TotsListResponse } from '../entities/tots-list-response';
 })
 export class TotsBaseHttpService<T> {
     /**
-     * 
+     *
      */
     basePathUrl = '';
 
@@ -25,7 +25,7 @@ export class TotsBaseHttpService<T> {
         return this.http.post<T>(this.config.baseUrl + this.basePathUrl, item);
     }
 
-    fetchById(itemId: number): Observable<T> {
+    fetchById(itemId: number|string): Observable<T> {
         return this.http.get<T>(this.config.baseUrl + this.basePathUrl + '/' + itemId);
     }
 
@@ -37,7 +37,7 @@ export class TotsBaseHttpService<T> {
         return this.http.get<TotsListResponse<T>>(this.config.baseUrl + this.basePathUrl + '?' + query.toString());
     }
 
-    removeById(itemId: number): Observable<{deletes: Array<number>}> {
+    removeById(itemId: number|string): Observable<{deletes: Array<number>}> {
         return this.http.delete<{deletes: Array<number>}>(this.config.baseUrl + this.basePathUrl + '/' + itemId);
     }
 
