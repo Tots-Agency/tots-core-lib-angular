@@ -8,6 +8,7 @@
 export * from './lib/entities/tots-core-config';
 export * from './lib/entities/tots-query';
 export * from './lib/entities/tots-list-response';
+export * from './lib/entities/tots-meta-list-response';
 
 /**
  * Operators
@@ -19,6 +20,7 @@ export * from './lib/operators/nil';
  */
 export * from './lib/services/tots-base-http.service';
 export * from './lib/services/tots-cache-in-memory.service';
+export * from './lib/services/tots-base-meta-http.service';
 
 /**
  * Helpers
