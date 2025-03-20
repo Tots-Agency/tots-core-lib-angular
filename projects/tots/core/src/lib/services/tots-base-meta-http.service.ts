@@ -11,7 +11,7 @@ import { TotsMetaListResponse } from '../entities/tots-meta-list-response';
 export class TotsBaseMetaHttpService<T> extends TotsBaseHttpService<T> {
 
     override list(query: TotsQuery): Observable<TotsListResponse<T>> {
-        return super.http.get<TotsMetaListResponse<T>>(this.config.baseUrl + this.basePathUrl + '?' + query.toString())
+        return this.http.get<TotsMetaListResponse<T>>(this.config.baseUrl + this.basePathUrl + '?' + query.toString())
         .pipe(
           map((response: TotsMetaListResponse<T>) => {
             return {
