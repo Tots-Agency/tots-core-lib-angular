@@ -1,27 +1,82 @@
-# TotsCoreLibAngular
+# @tots/core
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
 
-## Development server
+`@tots/core` is the foundational library for Tots Angular packages. It provides:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Standardized HTTP services for CRUD operations
+- Query and response utilities for paginated APIs
+- Core configuration through dependency injection
+- Common utilities and helpers functions
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
+
+```bash
+npm install @tots/core
+```
+
+Ensure your project uses Angular 20+ and compatible versions of TypeScript, zone.js, and rxjs.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Importing the module
 
-## Running end-to-end tests
+```typescript
+import { NgModule } from '@angular/core';
+import { TotsCoreModule } from '@tots/core';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+@NgModule({
+	imports: [TotsCoreModule]
+})
+export class AppModule { }
+```
 
-## Further help
+## Configuration
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```typescript
+import { Injectable } from '@angular/core';
+import { TotsCoreConfig } from '@tots/core';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class AppConfig extends TotsCoreConfig {
+	baseUrl = 'https://api.example.com';
+	lang = 'en';
+}
+```
+
+## Usage of BaseHttpService
+
+```typescript
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { TotsBaseHttpService, TotsQuery } from '@tots/core';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class UserService extends TotsBaseHttpService<User> {
+	
+	basePathUrl = '/users';
+
+	constructor(http: HttpClient, config: TotsCoreConfig) {
+		super(config, http);
+	}
+}
+
+// Query users
+const totsQuery = new TotsQuery();
+
+userService.list(totsQuery).subscribe(
+	(response:TotsListResponse<User>) => {
+		console.log(response.data);
+	}
+);
+```
