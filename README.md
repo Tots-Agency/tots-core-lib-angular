@@ -30,6 +30,8 @@ npm install @tots/core
 
 Ensure your project uses Angular 20+ and compatible versions of TypeScript, zone.js, and rxjs.
 
+<br>
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
