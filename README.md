@@ -1,4 +1,13 @@
-# @tots/core
+<div align="center">
+  <img src="https://avatars.githubusercontent.com/u/117909365" alt="Tots Logo" width="150">
+  
+  <h1>
+    @tots/core
+  </h1>
+
+</div>
+
+<br><br>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
 
@@ -9,7 +18,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Core configuration through dependency injection
 - Common utilities and helpers functions
 
----
+<br>
+<hr>
+<br>
 
 ## Installation
 
@@ -23,7 +34,9 @@ Ensure your project uses Angular 20+ and compatible versions of TypeScript, zone
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
----
+<br>
+<hr>
+<br>
 
 ## Importing the module
 
@@ -36,6 +49,8 @@ import { TotsCoreModule } from '@tots/core';
 })
 export class AppModule { }
 ```
+
+<br>
 
 ## Configuration
 
@@ -51,6 +66,8 @@ export class AppConfig extends TotsCoreConfig {
 	lang = 'en';
 }
 ```
+
+<br>
 
 ## Usage of BaseHttpService
 
