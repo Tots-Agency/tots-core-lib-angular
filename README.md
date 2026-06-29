@@ -9,7 +9,7 @@
 
 <br><br>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 21.2.17.
 
 `@tots/core` is the foundational library for Tots Angular packages. It provides:
 
@@ -28,7 +28,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 npm install @tots/core
 ```
 
-Ensure your project uses Angular 20+ and compatible versions of TypeScript, zone.js, and rxjs.
+Ensure your project uses Angular 21+ and compatible versions of TypeScript, zone.js, and rxjs.
 
 <br>
 
